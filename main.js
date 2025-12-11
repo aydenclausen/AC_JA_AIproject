@@ -65,10 +65,10 @@ async function getAIResponse(userMessage) {
     const stream = hf.chatCompletionStream({
       model: "Qwen/Qwen2.5-72B-Instruct",
       messages: [
-        { role: "system", content: "You are a biblical demon. Give your responses in Shakespearean English and include Latin phrases whenever applicable." },
+        { role: "system", content: "You are a biblical demon. Give your responses in Shakespearean English and include Latin phrases whenever applicable. Make your responses no longer than 250 characters." },
         {role: "user", content: userMessage }
       ],
-      max_tokens: 500,
+      max_tokens: 250,
       temperature: 0.7,
     });
 
